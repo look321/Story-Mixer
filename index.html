@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:#151515;">
+
+<head>
+	<title>Story Mixer</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+</head>
+
+<div id="wrapper">
+	<p class="text" id="title">
+		<a href="https://www.youtube.com/watch?v=faECSMHQnws" style="color:orange">Panda X Studios</a> Presents - Story Mixer
+	</p>
+	<p class="text" id="top">
+		Character
+	</p>
+	<p class="text" id="cross">
+		<img onclick="generate()" src="cross.png" id="cross-button"
+			onmouseover="this.src='cross-hover.png';"
+         	onmouseout="this.src='cross.png';" >
+		</img>
+	</p>
+	<p class="text" id="bottom">
+		Conflict
+	</p>
+</div>
+
+<script>
+
+var characters = ["Person needs protection", "Partygoer", "Friend who is a nuisance", "Cheater", "Hitchhiker", "Person who doesn't feel attractive enough", "Object of a crush", "Mysterious stranger"];
+var conflicts = ["What is that smell?", "Where is everyone?", "Mirror", "The last one", "Car won't start", "Nobody is watching", "Shouldn't have touched it", "Long walk with an old friend", "Note on windshield"];
+
+function generate() {
+    var characterNum = Math.floor((Math.random() * 8));
+    var conflictNum = Math.floor((Math.random() * 9));
+    document.getElementById("top").innerHTML = characters[characterNum];
+    document.getElementById("bottom").innerHTML = conflicts[conflictNum];
+
+
+}
+</script>
+
+</body>
+</html>
+
+<style>
+#wrapper {
+  width: 100%;     /* specify a width! */
+  margin: 0 auto; /* center */
+}
+
+.text {
+	color:white;
+	font-size: 500%;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	margin-bottom: auto;
+}
+
+#cross {
+	height: 10%;
+	margin-top: 5%;
+
+}
+
+#cross-button {
+	width: 10%;
+}
+
+#top {
+	margin-top: 4%;
+}
+
+#title {
+	margin-top: 8%;
+	font-size: 200%;
+}
+
+
+</style>
